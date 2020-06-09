@@ -25,7 +25,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        
+      
+      - name: Log into registry
+        run: echo "${{ secrets.WRITE_PAT }}" | docker login containers.pkg.github.com -u ${{ github.actor }} --password-stdin
+
       - name: Pull Image
         run: |
           IMAGE_ID=containers.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
