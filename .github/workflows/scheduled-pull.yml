@@ -1,8 +1,8 @@
 name: Scheduled Pull
 
 on:
-  schedule:
-    - cron: "*/1 * * * *"     
+  # schedule:
+  #  - cron: "*/1 * * * *"     
 
   push:
     # Publish `master` as Docker `latest` image.
