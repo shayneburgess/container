@@ -1,8 +1,8 @@
 name: Scheduled Re-Build
 
 on:
-  #schedule:
-  #  - cron: "*/60 * * * *"
+  schedule:
+    - cron: "*/60 * * * *"
       
   push:
     # Publish `master` as Docker `latest` image.
