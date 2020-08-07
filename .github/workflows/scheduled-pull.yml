@@ -30,9 +30,11 @@ jobs:
         run: echo "${{ secrets.WRITE_PAT }}" | docker login containers.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: Pull Image
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           
-          echo ${{ secrets.GITHUB_TOKEN }}
+          echo ${GITHUB_TOKEN}
           
           IMAGE_ID=containers.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
           
