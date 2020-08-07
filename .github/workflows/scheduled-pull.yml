@@ -31,6 +31,9 @@ jobs:
 
       - name: Pull Image
         run: |
+          
+          echo $GITHUB_TOKEN
+          
           IMAGE_ID=containers.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
           
           # Change all uppercase to lowercase
