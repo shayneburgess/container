@@ -32,7 +32,7 @@ jobs:
       - name: Pull Image
         run: |
           
-          echo $GITHUB_TOKEN
+          echo ${{ secrets.GITHUB_TOKEN }}
           
           IMAGE_ID=containers.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
           
