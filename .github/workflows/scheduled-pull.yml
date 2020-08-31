@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: Log into registry
-        run: echo "${{ secrets.WRITE_PAT }}" | docker login containers.pkg.github.com -u ${{ github.actor }} --password-stdin
+        run: echo "${{ secrets.WRITE_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Pull Image
         env:
@@ -36,7 +36,7 @@ jobs:
           
           echo ${GITHUB_TOKEN}
           
-          IMAGE_ID=containers.pkg.github.com/${{ github.repository }}/$IMAGE_NAME
+          IMAGE_ID=ghcr.io/${{ github.repository }}/$IMAGE_NAME
           
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
